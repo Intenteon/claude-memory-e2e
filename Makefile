@@ -24,6 +24,10 @@ test-callgraph: build
 test-ollama: build
 	go test ./tests/... -v -timeout 300s -run 'TestOllama'
 
+# Run branch switch ghost function test
+test-branch: build
+	go test ./tests/... -v -run TestBranchSwitch -timeout 300s
+
 # Setup the fixture project (clone, index)
 setup:
 	bash setup-fixture.sh
